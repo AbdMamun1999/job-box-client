@@ -2,6 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({}),
-  endpoints: (builder) => {},
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
+  endpoints: () => ({}),
 });
+
+export const { useRegisterMutation } = apiSlice;
+
+export default apiSlice;
